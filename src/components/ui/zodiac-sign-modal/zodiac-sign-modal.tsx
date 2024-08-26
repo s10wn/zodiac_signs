@@ -5,7 +5,7 @@ import { getHoroscope } from "@/api/zodiac-signs";
 
 import styles from "./zodiac-sign-modal.module.css";
 
-import type { ZodiacSign } from "@/types/zodiacSign.type";
+import type { ZodiacSign } from "@/types/zodiac-sign.type";
 
 type ZodiacSignModalProps = {
   sign: string;
