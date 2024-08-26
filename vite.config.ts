@@ -1,25 +1,29 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig, UserConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-import svgr from "vite-plugin-svgr";
 import browserslistToEsbuild from "browserslist-to-esbuild";
+import path from "path";
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), svgr()],
+  plugins: [react()] as UserConfig["plugins"],
   build: {
     target: browserslistToEsbuild(),
     sourcemap: false,
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+      "@tests": path.resolve(__dirname, "./tests"),
+    },
   },
   test: {
     globals: true,
     environment: "jsdom",
     reporters: ["verbose"],
     setupFiles: "./vitest-setup.ts",
-    globalSetup: "./test-globals.ts",
     coverage: {
-      reporter: ["html"],
+      reporter: ["text", "json", "html"],
       include: ["src/**/*"],
-      exclude: ["**/*.stories.*"],
+      exclude: [],
     },
   },
 });

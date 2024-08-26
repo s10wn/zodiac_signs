@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Modal } from "@/components/lib/modal";
 import { getHoroscope } from "@/api/zodiac-signs";
 
+import styles from "./zodiac-sign-modal.module.css";
+
 import type { ZodiacSign } from "@/api/zodiac-signs/types";
 
 type ZodiacSignModalProps = {
@@ -25,8 +27,10 @@ export const ZodiacSignModal = ({ sign, isOpen, onClose }: ZodiacSignModalProps)
   }, [zodiacSign, sign]);
 
   return (
-    <Modal isOpen={isOpen} title="Today" onClose={onClose}>
-      <p>{sign}</p>
-    </Modal>
+    zodiacSign && (
+      <Modal isOpen={isOpen} title={zodiacSign.sign} onClose={onClose}>
+        <p className={styles.zodiacDescription}>{sign}</p>
+      </Modal>
+    )
   );
 };
