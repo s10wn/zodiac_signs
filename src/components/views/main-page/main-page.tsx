@@ -31,7 +31,6 @@ export const MainPage = () => {
           className={styles.zodiacCard}
           key={sign.key}
           sign={sign.key}
-          name={sign.name}
           period={sign.period}
           image={sign.image}
         />
