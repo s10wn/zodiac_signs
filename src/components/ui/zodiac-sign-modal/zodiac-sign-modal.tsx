@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Modal } from "@/components/lib/modal";
+
 import { getHoroscope } from "@/api/zodiac-signs";
 
 import styles from "./zodiac-sign-modal.module.css";
@@ -15,11 +17,12 @@ type ZodiacSignModalProps = {
 
 export const ZodiacSignModal = ({ sign, isOpen, onClose }: ZodiacSignModalProps) => {
   const [zodiacSign, setZodiacSign] = useState<ZodiacSign | null>(null);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     getHoroscope({
       sign,
-      language: "original",
+      language: i18n.language === "ru" ? "original" : "translated",
       period: "today",
     }).then((zodiac) => {
       setZodiacSign(zodiac);
