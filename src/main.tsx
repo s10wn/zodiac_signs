@@ -6,6 +6,8 @@ import { MainPage } from "./components/views/main-page";
 
 import "@/styles/index.css";
 
+import "@/config/i18n/i18n";
+
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
 root.render(

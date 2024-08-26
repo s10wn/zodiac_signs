@@ -1,10 +1,14 @@
 import { defineConfig, UserConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
+import svgr from "vite-plugin-svgr"; // Импортируйте плагин svgr
 import browserslistToEsbuild from "browserslist-to-esbuild";
 import path from "path";
 
 export default defineConfig({
-  plugins: [react()] as UserConfig["plugins"],
+  plugins: [
+    react(),
+    svgr(), // Добавьте плагин svgr
+  ] as UserConfig["plugins"],
   build: {
     target: browserslistToEsbuild(),
     sourcemap: false,

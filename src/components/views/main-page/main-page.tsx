@@ -7,6 +7,7 @@ import { zodiacSigns } from "@/constants/zodiac-signs";
 
 import styles from "./main-page.module.css";
 import { ConditionalRender } from "@/components/lib/conditional-render";
+import { LangSwitcher } from "@/components/lib/lang-switcher";
 
 export const MainPage = () => {
   const [isZodiacSignModalOpen, setIsZodiacSignModalOpen] = useState(false);
@@ -23,6 +24,7 @@ export const MainPage = () => {
 
   return (
     <main className={styles.mainPage}>
+      <LangSwitcher />
       {zodiacSigns.map((sign) => (
         <ZodiacSignCard
           openZodiacSignModal={openZodiacSignModal}
