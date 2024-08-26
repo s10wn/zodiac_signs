@@ -17,7 +17,7 @@ type ZodiacSignModalProps = {
 
 export const ZodiacSignModal = ({ sign, isOpen, onClose }: ZodiacSignModalProps) => {
   const [zodiacSign, setZodiacSign] = useState<ZodiacSign | null>(null);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     getHoroscope({
@@ -31,8 +31,8 @@ export const ZodiacSignModal = ({ sign, isOpen, onClose }: ZodiacSignModalProps)
 
   return (
     zodiacSign && (
-      <Modal isOpen={isOpen} title={zodiacSign.sign} onClose={onClose}>
-        <p className={styles.zodiacDescription}>{sign}</p>
+      <Modal isOpen={isOpen} title={t(zodiacSign.sign)} onClose={onClose}>
+        <p className={styles.zodiacDescription}>{zodiacSign.horoscope}</p>
       </Modal>
     )
   );
