@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-import styles from "./lang-switcher.module.css"; // Импорт стилей
+import styles from "./lang-switcher.module.css";
 import FlagRuIcon from "./assets/flag-ru.svg?react";
 import FlagEnIcon from "./assets/flag-en.svg?react";
 
@@ -12,11 +12,19 @@ type LangSwitcherProps = {
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { i18n } = useTranslation();
 
-  // Установите язык по умолчанию на основе текущего языка
+  useEffect(() => {
+    if (window.Telegram && window.Telegram.WebApp) {
+      const webApp = window.Telegram.WebApp;
+      const userLang = webApp.initDataUnsafe?.lang || "en"; // Получаем язык пользователя
+
+      // Устанавливаем язык для i18next
+      i18n.changeLanguage(userLang === "ru" ? "ru" : "en");
+    }
+  }, [i18n]);
+
   const defaultLanguage = i18n.language || "en";
   const [currentLanguage, setCurrentLanguage] = useState(defaultLanguage);
 
-  // Функция для изменения языка
   const changeLanguage = (lang: string) => {
     setCurrentLanguage(lang);
     i18n.changeLanguage(lang);
