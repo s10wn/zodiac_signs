@@ -1,0 +1,14 @@
+.mainPage {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  place-content: flex-start space-between;
+  align-items: stretch;
+
+  min-height: 100vh;
+  padding: 20px 10px;
+
+  .zodiacCard {
+    width: 30%;
+  }
+}

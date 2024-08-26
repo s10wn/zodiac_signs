@@ -1,0 +1,12 @@
+*.tsx
+*.jsx
+*.ts
+*.js
+*.md
+*.svg
+*.png
+
+dist
+/node_modules
+coverage
+storybook-static

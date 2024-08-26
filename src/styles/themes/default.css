@@ -1,0 +1,8 @@
+.appLightTheme {
+  min-height: 100vh;
+  --bg-color: #f8f8f8;
+  --inverted-bg-color: #fff;
+
+  --primary-color: #000;
+  --secondary-color: #1695ed;
+}

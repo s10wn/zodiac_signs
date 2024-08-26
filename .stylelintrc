@@ -1,0 +1,28 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-clean-order", "stylelint-prettier/recommended"],
+  "rules": {
+    "custom-property-empty-line-before": null,
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "import-notation": "string",
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["mixin", "define-mixin"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/components/lib/date-input/custom-style-calendar.css"],
+      "rules": {
+        "selector-class-pattern": null
+      }
+    }
+  ]
+}

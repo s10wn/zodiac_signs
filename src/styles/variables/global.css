@@ -1,0 +1,59 @@
+:root {
+  --font-family-main: "Rubik", sans-serif;
+  --font-family-secondary: "Roboto", sans-serif;
+  --font-family-tertiary: "Open Sans", sans-serif;
+
+  --font-size-s: 12px;
+  --font-line-s: 18px;
+  --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+  --secondary-font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-secondary);
+  --tertiary-font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-tertiary);
+
+  --font-size-m: 14px;
+  --font-line-m: 22px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  --secondary-font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-secondary);
+  --tertiary-font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-tertiary);
+
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --secondary-font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-secondary);
+  --tertiary-font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-tertiary);
+
+  /* Размеры */
+  --header-height: 81px;
+  --header-mobile-height: 61px;
+  --sidebar-width: 280px;
+  --sidebar-width-collapsed: 92px;
+
+  /* z - Индексы */
+  --select-z-index: 10;
+  --header-z-index: 20;
+  --modal-z-index: 30;
+
+  /* z - Цвета */
+  --overlay-color: rgb(0 0 0 / 35%);
+  --orange-color: #fac362;
+  --red-color: #dc3545;
+  --light-green-color: #51bb25;
+  --green-color: #08b763;
+  --light-blue-color: #1686d4;
+  --blue-color: #0a71b8;
+  --purple-color: #3807c5;
+  --gray-color: #8d8f90;
+  --light-gray-color: #ced4da;
+
+  --navbar-section-bg-color: #1695ed26;
+
+  --background-blue-color: rgb(22 149 237 / 15%);
+  --background-green-color: rgb(81 187 37 / 15%);
+  --green-text-color: #51bb25;
+  --background-orange-color: rgb(254 162 0 / 15%);
+  --orange-text-color: #fea200;
+  --background-purple-color: rgb(169 39 249 / 15%);
+  --purple-text-color: #a927f9;
+  --border-color: #ecf3fa;
+  --background-red-color: rgb(198 11 10 / 30%);
+  --red-text-color: #c50707;
+}

@@ -1,0 +1,11 @@
+dist/*
+public/*
+coverage
+!.storybook
+
+vite.config.ts
+src/vite-env.d.ts
+postcss.config.mjs
+plopfile.mjs
+
+storybook-static

@@ -1,0 +1,28 @@
+.card {
+  min-width: 105px;
+  padding: 2px;
+
+  text-align: center;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  h2 {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+  span {
+    font-size: 12px;
+  }
+
+  &:hover {
+    border: 1px solid #1e64e6;
+  }
+}

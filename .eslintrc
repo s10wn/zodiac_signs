@@ -1,0 +1,291 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier", "import", "react-hooks", "react", "no-comments", "no-else", "fp"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "prettier",
+    "eslint:recommended",
+    "eslint-config-prettier",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:import/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:storybook/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["./src"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/ignore": ["node_modules"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "project": ["./tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true,
+      "arrowFunctions": true
+    }
+  },
+  "rules": {
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/destructuring-assignment": [
+      "error",
+      "always",
+      { "ignoreClassFields": true, "destructureInSignature": "always" }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".tsx"]
+      }
+    ],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "ignore",
+        "custom": "enforce",
+        "exceptions": [
+          "FormProvider",
+          "Select",
+          "TextInput",
+          "Listbox",
+          "Textarea",
+          "ListItem",
+          "FioInput",
+          "PatternFormat",
+          "NumberInput",
+          "DateInput",
+          "Checkbox",
+          "NumericFormat"
+        ]
+      }
+    ],
+    "react/display-name": "off",
+    "react/jsx-curly-newline": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-array-index-key": "warn",
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/prop-types": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "react/require-default-props": "off",
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/ban-ts-comment": "error",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "ignoreRestSiblings": true,
+        "varsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/lines-between-class-members": ["error"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["camelCase", "PascalCase"],
+        "leadingUnderscore": "forbid",
+        "filter": {
+          "regex": "^(_|Story)$",
+          "match": false
+        }
+      },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE", "snake_case"],
+        "leadingUnderscore": "forbid"
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"],
+        "leadingUnderscore": "forbid"
+      },
+      {
+        "selector": "class",
+        "format": ["PascalCase"],
+        "leadingUnderscore": "forbid"
+      },
+      {
+        "selector": "enum",
+        "format": ["PascalCase"],
+        "leadingUnderscore": "forbid"
+      },
+      {
+        "selector": "enumMember",
+        "format": ["UPPER_CASE"],
+        "leadingUnderscore": "forbid"
+      },
+      {
+        "selector": "property",
+        "format": ["camelCase"],
+        "leadingUnderscore": "forbid"
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "import/no-named-default": "error",
+    "import/no-duplicates": "error",
+    "import/no-unresolved": "error",
+    "import/no-cycle": "warn",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups",
+        "groups": ["builtin", "external", ["internal", "parent"], "sibling", "type"],
+        "pathGroups": [
+          {
+            "pattern": "/hooks/*",
+            "group": "parent"
+          },
+          {
+            "pattern": "/utils/*",
+            "group": "parent"
+          },
+          {
+            "pattern": "/scripts/*",
+            "group": "parent"
+          },
+          {
+            "pattern": "/constants/*",
+            "group": "parent"
+          },
+          {
+            "pattern": "/types/*",
+            "group": "type"
+          }
+        ]
+      }
+    ],
+    "prettier/prettier": "error",
+    "class-methods-use-this": "error",
+    "func-names": "error",
+    "no-console": ["error", { "allow": ["error", "info", "warn"] }],
+    "no-constant-condition": "error",
+    "consistent-return": "error",
+    "no-alert": "error",
+    "no-process-exit": "error",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state", "registration", "config"]
+      }
+    ],
+    "object-shorthand": "error",
+    "no-else-return": ["error", { "allowElseIf": false }],
+    "no-comments/disallowComments": [
+      "error",
+      {
+        "allow": ["TODO", "NOTE"]
+      }
+    ],
+    "no-else/no-else": "error",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ExportDefaultDeclaration",
+        "message": "Prefer named exports"
+      }
+    ],
+    "arrow-body-style": ["error", "as-needed"],
+    "max-params": ["error", { "max": 3 }],
+    "fp/no-delete": "error",
+    "no-var": "error",
+    "no-underscore-dangle": "off",
+    "no-await-in-loop": "off",
+    "sort-imports": "off",
+    "react/button-has-type": "off",
+    "import/prefer-default-export": "off",
+    "no-shadow": "off",
+    "no-continue": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/explicit-function-return-type": "error"
+      }
+    },
+    {
+      "files": ["**/*.stories.*", "src/config/**/*", ".storybook/**/*"],
+      "rules": {
+        "no-restricted-syntax": "off",
+        "react-hooks/rules-of-hooks": "off"
+      }
+    },
+    {
+      "files": ["src/store/**/*-store.*"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    }
+  ],
+  "globals": {
+    "window": true,
+    "FormData": true,
+    "Blob": true,
+    "document": true,
+    "chrome": true
+  }
+}

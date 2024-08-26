@@ -1,0 +1,11 @@
+import cn from "classnames";
+
+import styles from "./{{kebabCase componentName}}.module.css";
+
+type {{pascalCase componentName}}Props = {
+  className?: string;
+};
+
+export const {{pascalCase componentName}} = ({ className }: {{pascalCase componentName}}Props) => (
+  <div className={cn(styles.{{~camelCase componentName~}}, className)}>{{pascalCase componentName}}</div>
+);
